@@ -1,4 +1,12 @@
 const Pro=require("../model/product")
+exports.Default= async(req,res)=>{
+    try{res.status(200).send("connected to node backend")
+    console.log("default hit");
+        }
+    catch(err){
+        res.send({failed:err.kind})
+    }
+}
 exports.Data= async(req,res)=>{
     try{const result = await Pro.find()
         if (!result){
