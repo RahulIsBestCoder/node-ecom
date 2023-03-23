@@ -23,7 +23,7 @@ mongoose.connection.on('connected',connected=>{
 app.use(cors({origin: true, credentials: true}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.status(200).send("connected to nodejs backend")
 })
 app.use('/api/v1',messagesRoute);
